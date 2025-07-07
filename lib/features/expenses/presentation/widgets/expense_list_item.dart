@@ -44,10 +44,10 @@ class ExpenseListItem extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text('${expense.isExpense ? '-' : '+'}\$${expense.amount.toStringAsFixed(2)}',
+              Text('${expense.isExpense ? '-' : '+'}\$${expense.convertedAmount.toStringAsFixed(2)}',
                 style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600,
-                  color: expense.isExpense ? Colors.red : Colors.green)),
+                  color: Colors.black)),
               const SizedBox(height: 4),
               Text(DateFormat('MMM dd, hh:mm a').format(expense.date),
                 style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey)),

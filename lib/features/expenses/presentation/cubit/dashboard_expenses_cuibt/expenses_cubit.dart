@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
+import 'package:expense_tracker_app/features/expenses/domain/use_cases/get_balance_usecase.dart';
+import 'package:expense_tracker_app/features/expenses/domain/use_cases/get_recent_expenses_usecase.dart';
 
 
-import '../../domain/use_cases/get_recent_expenses_usecase.dart';
-import '../../domain/use_cases/get_balance_usecase.dart';
 import 'expenses_state.dart';
 
 class ExpensesCubit extends Cubit<ExpensesState> {

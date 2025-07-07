@@ -24,7 +24,7 @@ class HeaderDecoPainter extends CustomPainter {
     final smallPaint = Paint()
       ..color = const Color.fromARGB(255, 213, 216, 241).withOpacity(0.09)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 11.0;
+      ..strokeWidth = 8.0;
 
     final smallCenter = Offset(size.width - -35, size.height - 110);
     final smallRadius = 50.0;

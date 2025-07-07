@@ -30,7 +30,6 @@ class ExpensesLocalDataSourceImpl implements ExpensesLocalDataSource {
     required FilterOptions filter,
   }) async {
     final all = box.values.toList();
-    // TODO: apply FilterOptions logic here
     return all.skip((page - 1) * count).take(count).toList();
   }
 

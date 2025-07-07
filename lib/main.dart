@@ -1,4 +1,6 @@
 import 'package:expense_tracker_app/features/expenses/data/models/expense_model.dart';
+import 'package:expense_tracker_app/features/expenses/presentation/cubit/add_expenses_cubit/add_expense_cubit.dart';
+import 'package:expense_tracker_app/features/expenses/presentation/cubit/dashboard_expenses_cuibt/expenses_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -21,9 +23,10 @@ import 'features/expenses/data/repo_implementations/expenses_repository_imp.dart
 // Expenses Domain Layer
 import 'features/expenses/domain/use_cases/get_recent_expenses_usecase.dart';
 import 'features/expenses/domain/use_cases/get_balance_usecase.dart';
+import 'features/expenses/domain/use_cases/add_expense_usecase.dart'; // << جديد
 // Expenses Presentation Layer
-import 'features/expenses/presentation/cubit/expenses_cubit.dart';
 import 'features/expenses/presentation/screens/dashboard_screen.dart';
+import 'features/expenses/presentation/screens/add_expense_screen.dart'; // << جديد
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,6 +48,7 @@ void main() async {
   final expensesRepo = ExpensesRepositoryImpl(expensesDS, currencySvc);
   final getRecentUC  = GetRecentExpensesUseCase(expensesRepo);
   final getBalanceUC = GetBalanceUseCase(expensesRepo);
+  final addExpenseUC = AddExpenseUseCase(expensesRepo); // << جديد
 
   runApp(
     MultiBlocProvider(
@@ -57,6 +61,10 @@ void main() async {
         // ExpensesCubit provider
         BlocProvider<ExpensesCubit>(
           create: (_) => ExpensesCubit(getRecentUC, getBalanceUC),
+        ),
+        // AddExpenseCubit provider
+        BlocProvider<AddExpenseCubit>(
+          create: (_) => AddExpenseCubit(addExpenseUC),
         ),
       ],
       child: const MyApp(),
@@ -72,19 +80,32 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Expense Tracker Lite',
       debugShowCheckedModeBanner: false,
-      home: BlocBuilder<AuthCubit, AuthState>(
-        builder: (context, state) {
-          if (state is AuthLoading) {
-            return const Scaffold(
-              body: Center(child: CircularProgressIndicator()),
-            );
-          }
-          if (state is AuthAuthenticated) {
-            return const DashboardScreen();
-          }
-          return const LoginScreen();
-        },
-      ),
+      routes: {
+        '/': (_) => const _RootScreen(),
+        '/add_expense_screen': (_) => const AddExpenseScreen(),
+      },
+      initialRoute: '/',
+    );
+  }
+}
+
+/// شاشة الجذر: تسجيل الدخول أو الداشبورد حسب الحالة
+class _RootScreen extends StatelessWidget {
+  const _RootScreen();
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AuthCubit, AuthState>(
+      builder: (context, state) {
+        if (state is AuthLoading) {
+          return const Scaffold(
+            body: Center(child: CircularProgressIndicator()),
+          );
+        }
+        if (state is AuthAuthenticated) {
+          return const DashboardScreen();
+        }
+        return const LoginScreen();
+      },
     );
   }
 }
