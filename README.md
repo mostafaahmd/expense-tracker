@@ -1,16 +1,60 @@
-# expense_tracker_app
+💸 Expense Tracker App
+A modern and clean Flutter expense tracker, built with Clean Architecture and BLoC pattern.
 
-A new Flutter project.
+✨ Features
+Add and categorize expenses (with custom colors and icons)
 
-## Getting Started
+Multi-currency support (USD, EGP, EUR, SAR, GBP) with live currency conversion
 
-This project is a starting point for a Flutter application.
+Attach receipt images to expenses
 
-A few resources to get you started if this is your first Flutter project:
+Beautiful dashboard with animated header & custom navigation bar
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Pagination for infinite expenses
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Full Clean Architecture (Data, Domain, Presentation)
+
+Local storage with Hive
+
+Bloc/Cubit state management
+
+  
+🚀 Getting Started
+Clone the repo:
+
+
+git clone https://github.com/mostafaahmd/expense-tracker.git
+cd expense-tracker
+Install dependencies:
+
+
+flutter pub get
+Generate code (if needed):
+
+
+flutter pub run build_runner build --delete-conflicting-outputs
+Run the app:
+
+
+flutter run
+⚙️ Tech Stack
+Flutter 3.x
+
+Hive (local NoSQL)
+
+BLoC/Cubit for state management
+
+Clean Architecture (Domain/Data/Presentation)
+
+exchangerate-api.com for currency conversion
+
+🧪 Testing
+Run all unit tests:
+
+flutter test
+
+
+🙋‍♂️ Author
+Mostafa Mansour
+GitHub
+
