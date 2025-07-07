@@ -1,4 +1,4 @@
-import 'package:expense_tracker_app/features/expenses/presentation/widgets/card_deco_painter.dart';
+import 'package:expense_tracker_app/features/expenses/presentation/widgets/dashboard/card_deco_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

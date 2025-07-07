@@ -1,8 +1,8 @@
 import 'package:expense_tracker_app/core/constants/colors.dart';
 import 'package:expense_tracker_app/features/expenses/data/models/expense_category.dart';
-import 'package:expense_tracker_app/features/expenses/presentation/widgets/custom_drop_down.dart';
-import 'package:expense_tracker_app/features/expenses/presentation/widgets/custom_form_field.dart';
-import 'package:expense_tracker_app/features/expenses/presentation/widgets/custom_image_picker.dart';
+import 'package:expense_tracker_app/features/expenses/presentation/widgets/shared/custom_drop_down.dart';
+import 'package:expense_tracker_app/features/expenses/presentation/widgets/shared/custom_form_field.dart';
+import 'package:expense_tracker_app/features/expenses/presentation/widgets/shared/custom_image_picker.dart';
 import 'package:expense_tracker_app/features/expenses/domain/entities/expense.dart';
 import 'package:expense_tracker_app/features/expenses/presentation/cubit/add_expenses_cubit/add_expense_cubit.dart';
 import 'package:flutter/material.dart';

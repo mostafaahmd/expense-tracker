@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../widgets/balance_card.dart';
-import '../widgets/expense_list_item.dart';
-import '../widgets/header_deco_painter.dart';
-import '../widgets/custom_bottom_nav_bar.dart'; // استورد هنا
+import '../widgets/dashboard/balance_card.dart';
+import '../widgets/expenses/expense_list_item.dart';
+import '../widgets/dashboard/header_deco_painter.dart';
+import '../widgets/navigation/custom_bottom_nav_bar.dart'; // استورد هنا
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
