@@ -38,7 +38,9 @@ Run the app:
 
 flutter run
 ⚙️ Tech Stack
-Flutter 3.x
+Login:
+email-> most890@gmail.com
+pass-> most890
 
 Hive (local NoSQL)
 
